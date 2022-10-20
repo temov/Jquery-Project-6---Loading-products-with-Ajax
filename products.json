@@ -1,0 +1,39 @@
+{
+    "newProducts" : [
+        {
+            "title" : "<h3>Машка Јакна</h3>",
+            "description" : "<p>Perfect for dry wather, easy to clean</p>",
+            "image":"<img src = 'men jacket.jpg'>",
+            "details":"<a href ='#'>Види детален опис</a>",
+            "content":"<p>Направена од 100% полиестер, лесна за одржување. Се пере на 30 Ц</p>"
+        },
+       {
+            "title" : "<h3>Женска Јакна</h3>",
+            "description" : "<p>Perfect for dry wather, easy to clean</p>",
+            "image":"<img src = 'women jacket.jpg'>",
+            "details":"<a href ='#'>Види детален опис</a>",
+            "content":"<p>Направена од 100% кожа, лесна за одржување. Не се пере</p>"
+        },
+        {
+            "title" : "<h3>Mашки чевли</h3>",
+            "description" : "<p>Perfect for dry wather, easy to clean</p>",
+            "image":"<img src = 'men shoes.jpg'>",
+            "details":"<a href ='#'>Види детален опис</a>",
+             "content":"<p>Направени од 100% кожа, лесна за одржување. Се чистат со четка и спреј.</p>"
+        },
+        {
+            "title" : "<h3>Машки патики</h3>",
+            "description" : "<p>Perfect for dry wather, easy to clean</p>",
+            "image":"<img src = 'sneakers.jpg'>",
+            "details":"<a href ='#'>Види детален опис</a>",
+             "content":"<p>Направени од 100% рециклиран полиестер, лесни за одржување. Се перат на 30 Ц.</p>"
+        },
+        {
+            "title" : "<h3>Женски патики</h3>",
+            "description" : "<p>Perfect for dry wather, easy to clean</p>",
+            "image":"<img src = 'womansneakers.jpg'>",
+            "details":"<a href ='#'>Види детален опис</a>",
+             "content":"<p>Направени од 100% рециклиран полиестер, лесни за одржување. Се перат на 30 Ц.</p>"
+        }
+    ]
+}

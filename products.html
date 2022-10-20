@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Men's Clothes| Products</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $("document").ready(function () {
+            // fetch the AJAX content
+            //$("#newsContent").load("news.txt");
+
+            $.getJSON("products.json", successFn);
+
+            // ovoj e delot kade treba da dodavate proizvodi koga stigate do dnoto na vasata strana
+            // i nemate poveke proizvodi koi moze da gi pregleduvate pri [to go pravi povikot na novo
+            $(window).scroll(function () {
+                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    $.getJSON("products.json", successFn);
+                }
+            });
+        });
+
+        function successFn(result) {
+            var startTime = new Date().getTime();
+            $(document).ajaxStart(function () {
+                console.log(startTime);
+            });
+            $(document).ajaxComplete(function (evt, jqXHR, options) {
+                var completeTime = new Date().getTime() - startTime + "ms";
+                console.log(completeTime);
+                $("div.stats").append('response time' + ' ' + completeTime);
+            });
+
+            $.each(result.newProducts, function (i, item) {
+                var newsDiv = $("<div class='news'>");
+                newsDiv.append(item.title);
+                newsDiv.append(item.description);
+                newsDiv.append(item.image);
+                newsDiv.append(item.details);
+                $("#newsContent").append(newsDiv);
+
+            });
+
+            // tuka pri klik na nekoj od proizvodite se pravi povik do nekoj tekst koj se dodava
+            // na sodrzinata na kliknatiot proizvod.
+            $(".news a").click(function(){
+                const clickedNews = $(this);
+                $.get('opis.txt', function(sodrzina){
+                    clickedNews.append($('<p>'+sodrzina+'</p>'));
+                })
+           
+            })
+        
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header"><img src="header.jpg"></div>
+
+        <nav class="main-navigation" role="navigation">
+            <div id="menu-main-menu">
+                <ul class="nav-menu">
+                    <li><a href="index.html">За Нас</a></li>
+                    <li><a href="restaurant-to-room-service.html">Машки обувки</a></li>
+                    <li><a href="specials.html">Женски обувки</a></li>
+                    <li><a href="reservations.html">Детска облека</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="contact.html">Контакт</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <h1>Производи</h1>
+            <div id="newsContent"></div>
+        </div>
+        <div class="stats"></div>
+    </div>
+</body>
+
+</html>
